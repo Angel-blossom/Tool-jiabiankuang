@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片边框添加工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片边框添加工具</h1>
+        
+        <!-- 上传区域 -->
+        <div class="upload-section">
+            <label for="image-upload" class="upload-label">
+                <input type="file" id="image-upload" accept="image/*" hidden>
+                <span>点击上传图片</span>
+            </label>
+        </div>
+        
+        <!-- 预览区域 -->
+        <div class="preview-section">
+            <div class="preview-container" id="preview-container">
+                <img id="preview-image" src="" alt="预览图片">
+            </div>
+        </div>
+        
+        <!-- 控制面板 -->
+        <div class="control-panel">
+            <h2>边框设置</h2>
+            
+            <!-- 边框粗细 -->
+            <div class="control-group">
+                <label for="border-width">边框粗细: <span id="border-width-value">20</span>px</label>
+                <input type="range" id="border-width" min="1" max="100" value="20">
+            </div>
+            
+            <!-- 边框颜色 -->
+            <div class="control-group">
+                <label for="border-color">边框颜色:</label>
+                <input type="color" id="border-color" value="#ffffff">
+            </div>
+            
+            <!-- 过渡色设置 -->
+            <div class="control-group">
+                <label for="enable-gradient">启用过渡色:</label>
+                <input type="checkbox" id="enable-gradient">
+            </div>
+            
+            <div class="gradient-controls" id="gradient-controls" style="display: none;">
+                <div class="control-group">
+                    <label for="gradient-color">过渡颜色:</label>
+                    <input type="color" id="gradient-color" value="#000000">
+                </div>
+                <div class="control-group">
+                    <label for="gradient-direction">过渡方向:</label>
+                    <select id="gradient-direction">
+                        <option value="to right">从左到右</option>
+                        <option value="to bottom">从上到下</option>
+                        <option value="to bottom right">从左上到右下</option>
+                        <option value="to top right">从左下到右上</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 下载按钮 -->
+        <div class="download-section">
+            <button id="download-btn" disabled>下载图片</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
